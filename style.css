@@ -1,14 +1,24 @@
-html{
-    background-color:rgb(25, 23, 26);
+*{
+    padding: 0;
+    
 }
-img{
-    padding:0px;
-    margin-top:200px;
-    margin-left:600px;
-    padding:0px;
-    border-radius :50%;
-    box-shadow:0px 0px 400px rgb(20, 20, 20);
+html {
+    background-color: rgb(25, 23, 26);
 }
+
+img {
+    padding: 0px;
+    margin-top: 200px;
+    margin-left: 600px;
+    padding: 0px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 400px rgb(20, 20, 20);
+    width: 300px;
+    /* Initial position for animation */
+    position: absolute;
+    animation: fadeIn 2s ease-in-out forwards, slideRight 1s ease-in-out forwards 2s; /* Updated animation name */
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
     0% {
@@ -19,8 +29,22 @@ img{
     }
 }
 
-/* Apply the animation to the image */
-img {
-    width: 300px;
-    animation: fadeIn 2s ease-in-out; /* 2 seconds fade-in effect */
+/* Slide right animation */
+@keyframes slideRight { /* Renamed the keyframe to indicate it slides right */
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(400px); /* Positive value to slide right */
+    }
+}
+.slant-line {
+    position: absolute;
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Left side background color */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0%, 100% -500px); /* Diagonal cut from top left to bottom right */
+    z-index: -1; /* Send behind the image */
 }
