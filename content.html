@@ -3,21 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>My Online Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #303030;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header .header-buttons {
+            display: flex;
+            gap: 10px;
+            
+            
+        }
+        .header-buttons button {
+            background-color: rgb(190, 133, 58);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            color:rgb(44, 28, 7);
+            font-weight:bolder;
+            
+        }
+        .header-buttons button:hover {
+            background-color: #e80;
+    
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(44, 28, 7); /* Add linear gradient */
+            padding: 10px 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .search-bar {
+            flex-grow: 1;
+            margin-left: 20px;
+            margin-right: 100px;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content {
+            flex: 3;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .expert-recommendation {
+            width: 120%;
+            padding: 200px;
+            margin-bottom: 20px;
+            /* background-color: #e80; */
+            background-image: url('cloth.jpg');
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            color:white;
+            font-size:larger;
+        }
+
+        .expert-recommendation h2 {
+            margin: 0 0 10px;
+        }
+        .product {
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            width: calc(30% - 40px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+        .product button{
+        background-color:rgb(54, 34, 8);
+            color:white;
+            width:250px;
+            font-size:15px;
+            
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        margin:5px;}
+        .product button:last-of-type {
+    background-color: rgb(190, 133, 58);
+    color:rgb(44, 28, 7);
+    width: 250px;
+    font-size: 15px;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight:600;
+}
+        .product img {
+            max-width: 50%;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        .product p {
+            color: #888;
+        }
+
+        /* Trending Deals Styling */
+        .trending-deals {
+            flex: 1;
+            /* background-color: #fff; */
+            background-image:url('Untitled.jpeg');
+            padding: 15px;
+            margin-left: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            max-height: 50%;
+            max-width:20%;
+        }
+        .trending-deals h3 {
+            margin-top: 5;
+            color:black;
+            /* background-color:rgb(58, 37, 10); */
+        }
+        .deal-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-image: linear-gradient(to right, rgb(202, 146, 74), rgb(78, 50, 14)); /* Add linear gradient */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+        .trending-deals button{
+            background-color:rgb(54, 34, 8);
+            color:white;
+            width:250px;
+            font-size:15px;
+            
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .deal-item img{
+            max-width:100%;
+        }
+        .deal-item:hover {
+            background-color: #f0f0f0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
 
-            <div class="slant-line"></div>
-        <div class="cls">WELCOME</div>
-            <div class="buttons-container">
-                <button>New user</button>
-                <button>Existing user</button>
-                <button>Contact us</button>
+    <header>
+        <h1>Style Studio</h1>
+        <div class="header-buttons">
+            <button>Profile</button>
+            <button>Settings</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Main Content and Products -->
+        <div class="content">
+            <!-- Expert Recommendation Section -->
+            <div class="expert-recommendation">
+                <h2>Expert Recommendations</h2>
+                <p>Check out these top-rated products hand-picked by our experts!</p>
             </div>
-        
-            <img src="sample_logo9-removebg-preview.png">
-        </body>
-        
+
+            <!-- Product List -->
+            <div class="product">
+                <img src="img1.webp" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$29.99</p>
+                <button>Checkout</button>
+                <button>Add to Cart</button>
+            </div>
+            
+            <div class="product">
+                <img src="img2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$39.99</p>
+                <button>Checkout</button>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="img3.jpg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$49.99</p>
+                <button>Checkout</button>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="img4.jpg" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>$49.99</p>
+                <button>Checkout</button>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="img5.webp" alt="Product 5">
+                <h3>Product 5</h3>
+                <p>$49.99</p>
+                <button>Checkout</button>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="img6.webp" alt="Product 6">
+                <h3>Product 6</h3>
+                <p>$49.99</p>
+                <button>Checkout</button>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Trending Deals Section -->
+        <div class="trending-deals">
+            <h3>Trending Deals</h3>
+            <div class="deal-item">
+                <img src="accessories.png" alt="Product 4">
+                <h3>50% off on all accessories</h3>
+                <!-- <p>$49.99</p> -->
+                <button>Checkout</button>
+            </div>
+            <div class="deal-item">
+                <img src="shoes.webp" alt="Product 4">
+                <h3>Upto Rs. 300 off on footwear</h3>
+                <!-- <p>$49.99</p> -->
+                <button>Checkout</button>
+            </div>
+            <div class="deal-item">
+                <img src="tshirt.jpg" alt="Product 4">
+                <h3>Buy 1 Get 1 on T-shirts</h3>
+                <!-- <p>$49.99</p> -->
+                <button>Checkout</button>
+            </div>
+            <div class="deal-item">
+                <img src="jackets.jpg" alt="Product 4">
+                <h3>30% off on jackets</h3>
+ 
+                <button>Checkout</button>
+            </div>
+            <div class="deal-item">
+                <img src="brand.png" alt="Product 4">
+                <h3>Exclusive deals on top brands</h3>
+                <button>Checkout</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <p>&copy; Style Studio</p>
+    </footer>
+
 </body>
 </html>
